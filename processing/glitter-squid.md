@@ -1,5 +1,0 @@
-
-# glitter squid (svg + canvas)
-
-.
-

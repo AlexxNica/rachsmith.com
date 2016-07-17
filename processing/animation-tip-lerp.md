@@ -1,5 +1,0 @@
-
-# Animation tip: Lerp
-
-.
-

@@ -1,5 +1,0 @@
-
-# Hairy Rainbow Text
-
-.
-
