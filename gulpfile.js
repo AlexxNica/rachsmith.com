@@ -6,6 +6,7 @@ var copy = require('gulp-copy');
 var minifyCss = require('gulp-cssnano');
 var uglify = require('gulp-uglify');
 var livereload = require('gulp-livereload');
+var rimraf = require('rimraf');
 
 var EXPRESS_PORT = 4000;
 var EXPRESS_ROOT = __dirname+'/build';
@@ -62,21 +63,31 @@ gulp.task('update', function() {
     // init feed
     rss.initiate();
 
-    // process posts
-    blog.processPosts();
+    rimraf('build/**/*.html', function() {
+        // process posts
+        blog.processPosts();
 
-    // process pages
-    blog.processPages();
+        // process pages
+        blog.processPages();
 
-    // javascript
-    gulp.src('site/js/*.js')
-        .pipe(uglify())
-        .pipe(gulp.dest('build/js', {prefix: 1}))
-        .pipe(livereload());
+        // javascript
+        gulp.src('site/js/*.js')
+            .pipe(uglify())
+            .pipe(gulp.dest('build/js', {prefix: 1}))
+            .pipe(livereload());
 
-    // copy images
-    gulp.src('site/img/**/*')
-        .pipe(copy('build', {prefix: 1}));
+        // copy images
+        gulp.src('site/img/**/*')
+            .pipe(copy('build', {prefix: 1}));
+
+        // styles
+        gulp.src('site/scss/*.scss')
+        .pipe(sass())
+        .pipe(minifyCss())
+        .pipe(gulp.dest('build/css'))
+        .on('end', function() {
+        });
+    });
 });
 
 

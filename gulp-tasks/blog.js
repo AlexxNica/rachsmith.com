@@ -130,9 +130,9 @@ function createIndexPageHTML(page, allHTML, pages) {
     var scripts = fs.readFileSync('site/content/templates/shared/scripts.html', 'utf8');
     var footer = fs.readFileSync('site/content/templates/shared/footer.html', 'utf8');
     fs.readFile('site/content/templates/index/index.html', 'utf8', function(err, indexTemplate) {
-        var previousLink = page == pages ? '' : '<a href="'+(page+2)+'.html"><< Earlier Posts</a>';
+        var previousLink = page+1 == pages ? '' : '<a href="'+(page+2)+'.html"><< Earlier Posts</a>';
         var nextLink = page == 0 ? '' : page == 1 ? '<a href="index.html">Later Posts >></a>'
-            : '<a href="'+(page)+'.html">Later Posts ></a>';
+            : '<a href="'+(page)+'.html">Later Posts >></a>';
         indexTemplate = indexTemplate.replace('{{posts}}', allHTML);
         indexTemplate = indexTemplate.replace('{{scripts}}', scripts);
         indexTemplate = indexTemplate.replace('{{footer}}', footer);
