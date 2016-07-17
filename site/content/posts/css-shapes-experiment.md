@@ -4,6 +4,7 @@ category:: pen
 published:: true
 tags:: code
 title:: CSS Shapes Experiment (Chrome Only)
+penhash:: dBrFv
 link:: http://codepen.io/rachsmith/pen/dBrFv
 
 # CSS Shapes Experiment (Chrome Only)

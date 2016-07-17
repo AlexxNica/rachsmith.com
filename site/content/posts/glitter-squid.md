@@ -4,6 +4,7 @@ category:: pen
 published:: true
 tags:: code
 title:: glitter squid (svg + canvas)
+penhash:: MwNOBY
 link:: http://codepen.io/rachsmith/pen/MwNOBY/
 
 # glitter squid (svg + canvas)

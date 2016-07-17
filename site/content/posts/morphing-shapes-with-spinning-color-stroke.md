@@ -4,7 +4,9 @@ category:: pen
 published:: true
 tags:: code
 title:: Morphing shape with spinning color stroke (svg + canvas)
+penhash:: ONVQWv
 link:: http://codepen.io/rachsmith/details/ONVQWv/
+
 
 # Morphing shape with spinning color stroke (svg + canvas)
 

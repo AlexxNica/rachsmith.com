@@ -1,5 +1,5 @@
 date:: 2015-11-16
-type:: codepen
+type:: codepen-blog
 category:: writing
 published:: true
 tags:: code

@@ -2,3 +2,4 @@
 # Getting getImageData()
 
 .
+

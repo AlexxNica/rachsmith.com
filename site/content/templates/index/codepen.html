@@ -1,11 +1,16 @@
-<article class="home-post link {{cssClass}}">
-    <header class="home-article-header">
-        <p class="published">{{formattedDate}}</p>
-        <h3><a class="home-post-title" href="{{link}}">
-            <svg width="30" height="30"  class="icon codepen">
-            <use xlink:href="#codepen-logo"></use>
-            </svg> {{title}}</a>
-            </h3>
-    </header>
+<article class="home-post codepen">
+  <p class="published">{{formattedDate}}</p>
+  <header class="home-article-header">
+      <h2><a class="home-post-title" href="http://codepen.io/rachsmith/details/{{penhash}}/">
+           {{title}}</a>
+          </h2>
+  </header>
+  <iframe height='238' scrolling='no' src='//codepen.io/rachsmith/embed/preview/{{penhash}}/?height=238&theme-id=21435&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/rachsmith/pen/{{penhash}}/'>morphing shape with spinning color stroke (svg + canvas)</a> by Rachel Smith (<a href='http://codepen.io/rachsmith'>@rachsmith</a>) on <a href='http://codepen.io'>CodePen</a>.
+  </iframe>
+  <a class="codepen-link" href="{{link}}">
+    <svg width="22" height="22" class="icon codepen">
+    <use width="22" height="22" xlink:href="#codepen-logo"></use>
+    </svg> see the code at CodePen.io
+  </a>
 
 </article>

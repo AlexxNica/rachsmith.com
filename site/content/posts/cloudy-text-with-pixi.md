@@ -4,6 +4,7 @@ category:: pen
 published:: true
 tags:: code
 title:: Cloudy Text with Pixi.js
+penhash:: LEyLON
 link:: http://codepen.io/rachsmith/pen/LEyLON
 
 # Cloudy Text with Pixi.js

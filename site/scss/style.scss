@@ -1,0 +1,176 @@
+@import "normalize";
+@import "skeleton";
+
+body {
+  background: #ededf0;
+}
+
+.home-header {
+  padding-top: 2em;
+  h1 {
+    text-align: center;
+
+    > a {
+      text-decoration: none;
+      color: #8C5383;
+      font-weight: 700;
+    }
+  }
+}
+
+.post-header {
+  h3 {
+    font-size: 2.8rem;
+  }
+  text-align: center;
+  margin-top: 1.6em;
+  margin-bottom: 1.5em;
+}
+
+.codepen {
+  h2 {
+    display: none;
+  }
+
+  iframe {
+    margin-top: 12px;
+  }
+}
+
+.codepen-blog {
+  h2 {
+    font-size: 3rem;
+    line-height: 1;
+    margin-top: 0.8em;
+  }
+}
+
+.link {
+  h2 {
+    font-size: 3rem;
+
+    svg {
+      width: 22px;
+      height: 22px;
+      fill: #8C5383;
+    }
+  }
+}
+
+.home-post {
+  background: #fff;
+  padding: 1.8em 1.5em;
+  position: relative;
+  border-radius: 4px;
+  margin-bottom: 2em;
+
+  .codepen-link {
+    position: absolute;
+    bottom: 2rem;
+    left: 2.2rem;
+    margin: 0px;
+    height: 20px;
+    line-height: 26px;
+    color: #333;
+    text-decoration: none;
+
+    svg {
+      display: inline-block;
+      vertical-align: top;
+      fill: #333;
+    }
+
+    use {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .home-post-title {
+    color: #8C5383;
+    text-decoration: none;
+    font-weight: 700;
+  }
+}
+
+.container.content {
+  background: #fff;
+  padding: 2.2em 1.5em 1.8em 1.5em;
+  position: relative;
+  border-radius: 4px;
+  margin-bottom: 2em;
+
+  h1 {
+    font-weight: 700;
+    line-height: 1;
+    font-size: 4rem;
+    line-height: 1.2;
+  }
+}
+
+.post-link {
+  font-weight: 700;
+  a {
+    color: #8C5383;
+  }
+}
+
+.published {
+    position: absolute;
+    top: 12px;
+    left: -20px;
+    background: #464655;
+    padding: 2px 6px;
+    display: block;
+    color: #fff;
+    font-size: 1.3rem;
+    border-radius: 4px;
+  }
+
+.pagination {
+  margin-bottom: 2em;
+
+  a {
+    display: inline-block;
+    padding: 4px 10px;
+    border: 2px solid #8C5383;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #8C5383;
+
+    &:hover {
+      color: #fff;
+      background: #8C5383;
+    }
+  }
+}
+
+footer {
+  background: #464655;
+  color: #fff;
+  font-size: 1.8rem;
+  padding: 1.1em 0 1em 0;
+
+  h4 {
+    font-weight: 700;
+  }
+
+  a {
+    color: #D7D9B1;
+
+    &:hover {
+      color: #f4f5ea;
+    }
+  }
+
+  .rss {
+    color: #D7D9B1;
+    font-size: 2.2rem;
+    text-decoration: none;
+    svg {
+      fill: #D7D9B1;
+      width: 22px;
+      height: 22px;
+    }
+  }
+}
