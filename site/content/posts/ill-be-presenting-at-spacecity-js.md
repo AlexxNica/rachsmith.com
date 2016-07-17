@@ -1,5 +1,5 @@
 date:: 2015-01-21
-type:: post
+type:: micro-post
 category:: update
 published:: true
 tags:: code

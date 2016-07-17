@@ -1,15 +1,9 @@
 var fs = require('fs');
 var posts = [];
-var patterns = 4;
-var colors = ['#3d3b7d', '#0d0630', '#f03a47', '#40a189', '#8c1a6a'];
 
 module.exports = function (gulp, rss, md) {
     return {
         processPosts: function() {
-            // process posts
-            var indexPattern = 1;
-            var postPattern = 1;
-            var color = 0;
             fs.readdir('site/content/posts', function (err, files) {
                 var scripts = fs.readFileSync('site/content/templates/shared/scripts.html', 'utf8');
                 var footer = fs.readFileSync('site/content/templates/shared/footer.html', 'utf8');
@@ -24,19 +18,7 @@ module.exports = function (gulp, rss, md) {
                         post.settings.scripts = scripts;
                         post.settings.footer = footer;
                         if (post.settings.published != 'true') continue;
-                        if (post.settings.type == 'post') {
-                            post.settings.cssClass = 'pattern-'+postPattern;
-                            post.settings.backgroundColor = colors[color];
-                            color++;
-                            postPattern++;
-                            if (color >= colors.length) color = 0;
-                            if (postPattern > patterns) postPattern = 1;
-                            writtenPosts.push(post);
-                        } else {
-                            post.settings.cssClass = 'pattern-'+indexPattern;
-                            indexPattern++;
-                            if (indexPattern > patterns) indexPattern = 1;
-                        }
+                        if (post.settings.type == 'post' || post.settings.type == 'micro-post') writtenPosts.push(post);
                         allPosts.push(post);
                     }
 
@@ -106,7 +88,7 @@ function writePost(post, html) {
 
 function createBlog(posts) {
     var processed = 0;
-    var pages = Math.floor(posts.length/9);
+    var pages = Math.floor(posts.length/14);
 
     for(var i = 0, l = posts.length; i < l; i++) {
         var post = posts[i];
@@ -123,7 +105,7 @@ function createBlog(posts) {
 
 function createPage(page, posts, pages) {
     var html = '';
-    for (var i = page*9; i < (page*9)+9; i++) {
+    for (var i = page*14; i < (page*14)+14; i++) {
         if (posts[i]) html += posts[i].indexHTML;
     }
 
@@ -148,8 +130,8 @@ function createIndexPageHTML(page, allHTML, pages) {
     var scripts = fs.readFileSync('site/content/templates/shared/scripts.html', 'utf8');
     var footer = fs.readFileSync('site/content/templates/shared/footer.html', 'utf8');
     fs.readFile('site/content/templates/index/index.html', 'utf8', function(err, indexTemplate) {
-        var previousLink = page == pages ? '' : '<a href="'+(page+2)+'.html">< Earlier Posts</a>';
-        var nextLink = page == 0 ? '' : page == 1 ? '<a href="index.html">Later Posts ></a>'
+        var previousLink = page == pages ? '' : '<a href="'+(page+2)+'.html"><< Earlier Posts</a>';
+        var nextLink = page == 0 ? '' : page == 1 ? '<a href="index.html">Later Posts >></a>'
             : '<a href="'+(page)+'.html">Later Posts ></a>';
         indexTemplate = indexTemplate.replace('{{posts}}', allHTML);
         indexTemplate = indexTemplate.replace('{{scripts}}', scripts);

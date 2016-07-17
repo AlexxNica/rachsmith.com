@@ -48,7 +48,6 @@ gulp.task('styles', function() {
         .pipe(minifyCss())
         .pipe(gulp.dest('build/css'))
         .on('end', function() {
-            console.log('styles updated');
         });
 });
 
@@ -56,7 +55,7 @@ gulp.task('watch', function() {
     gulp.watch('site/scss/*.scss', ['styles']);
     gulp.watch('site/**/*.html', ['update']);
     gulp.watch('site/**/*.svg', ['update']);
-    gulp.watch('build/*.html', notifyLivereload);
+    gulp.watch('build/**/*', notifyLivereload);
 });
 
 gulp.task('update', function() {

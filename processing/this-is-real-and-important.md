@@ -7,3 +7,4 @@ That hasn't always been my experience in the web/tech world though. The fact is,
 
 Some women I respect wrote an open letter on this issue. You should go read it >>>
 <a href="http://modelviewculture.com/pieces/an-open-letter-on-feminism-in-tech">An Open Letter on Feminism In Tech</a>.
+

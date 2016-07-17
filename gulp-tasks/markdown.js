@@ -18,8 +18,7 @@ module.exports = function (gulp) {
                     if (setting) {
                         post.settings[setting[1]] = lines[i].split(setting[0] + ' ')[1];
                         if (setting[1] == 'date') post.settings.formattedDate = formatDate(post.settings.date);
-                    }
-                    else postContent += lines[i] + '\n';
+                    } else postContent += lines[i] + '\n';
                 }
 
                 post.path = post.settings.type == 'post' ? post.settings.date.split('-')[0] : '';
@@ -33,8 +32,12 @@ module.exports = function (gulp) {
                                 post.settings.content = content;
                                 //console.log(content);
                                 jsdom.env(content, function (errors, window) {
-                                    //post.settings.extract = window.document.getElementsByTagName('p')[0].innerHTML;
+                                    post.settings.extract = window.document.getElementsByTagName('p')[0].innerHTML;
                                     post.settings.url = post.path + '/' + post.html;
+                                    if (post.settings.type == 'micro-post') {
+                                        var heading = window.document.getElementsByTagName('h1')[0].outerHTML;
+                                        post.settings.homepageContent = content.replace(/<h1[\s\S]*<\/h1>/, '');
+                                    }
                                     window.close();
                                     callback(post);
                                     //fs.unlink(post.md);
@@ -49,8 +52,26 @@ module.exports = function (gulp) {
 };
 
 function formatDate(date) {
-    //var dateSplit = date.split('-').join('&#8226;');
-    return date;
+    var dateSplit = date.split('-');
+    var d = new Date(dateSplit[0],dateSplit[1],dateSplit[2])
+    return formatDateToText(d);
+}
 
-//    return getOrdinal(parseInt(dateSplit[2]))+' '+getMonthName(parseInt(dateSplit[1]))+' '+dateSplit[0];
+function addOrd(n) {
+  var ords = [,'st','nd','rd'];
+  var ord, m = n%100;
+  return n + ((m > 10 && m < 14)? 'th' : ords[m%10] || 'th');
+}
+
+// Return date string two weeks from now (14 days) in
+// format 13th March 2013
+function formatDateToText(d) {
+  var months = ['January','February','March','April','May','June',
+                'July','August','September','October','November','December'];
+
+  // Copy date object so don't modify original
+  var e = new Date(d);
+
+  // Add two weeks (14 days)
+  return addOrd(e.getDate()) + ' ' + months[e.getMonth()] + ' ' + e.getFullYear();
 }
