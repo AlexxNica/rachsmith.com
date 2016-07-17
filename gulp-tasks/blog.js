@@ -18,7 +18,7 @@ module.exports = function (gulp, rss, md) {
                         post.settings.scripts = scripts;
                         post.settings.footer = footer;
                         if (post.settings.published != 'true') continue;
-                        if (post.settings.type == 'post') writtenPosts.push(post);
+                        if (post.settings.type == 'post' || post.settings.type == 'micro-post') writtenPosts.push(post);
                         allPosts.push(post);
                     }
 

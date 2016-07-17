@@ -34,6 +34,10 @@ module.exports = function (gulp) {
                                 jsdom.env(content, function (errors, window) {
                                     post.settings.extract = window.document.getElementsByTagName('p')[0].innerHTML;
                                     post.settings.url = post.path + '/' + post.html;
+                                    if (post.settings.type == 'micro-post') {
+                                        var heading = window.document.getElementsByTagName('h1')[0].outerHTML;
+                                        post.settings.homepageContent = content.replace(/<h1[\s\S]*<\/h1>/, '');
+                                    }
                                     window.close();
                                     callback(post);
                                     //fs.unlink(post.md);
