@@ -6,3 +6,4 @@ I am super pumped to be presenting at Space City JS in Houston, Texas in March. 
 Normally I speak about Front End Design and animation topics but I will actually be talking about my journey in to dev ops while trying to improve our deployment processes at Active Theory.
 
 If you are in Houston or nearby I really hope to see you there. <a href="http://spacecityjs.com/">http://spacecityjs.com</a>
+

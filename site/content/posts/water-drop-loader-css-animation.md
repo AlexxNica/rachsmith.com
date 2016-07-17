@@ -4,6 +4,7 @@ category:: pen
 published:: true
 tags:: code
 title:: Water drop loader CSS animation
+penhash:: xGrjvB
 link:: http://codepen.io/rachsmith/pen/xGrjvB
 
 # Water drop loader CSS animation

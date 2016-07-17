@@ -4,6 +4,7 @@ category:: pens
 published:: true
 tags:: code
 title:: RSS Feed to Post List Layout
+penhash:: EpujL
 link:: http://codepen.io/rachsmith/pen/EpujL
 
 # RSS Feed to Post List Layout

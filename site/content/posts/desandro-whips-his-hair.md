@@ -4,6 +4,7 @@ category:: pen
 published:: true
 tags:: code
 title:: Desandro whips his hair
+penhash:: YXaryr
 link:: http://codepen.io/rachsmith/pen/YXaryr
 
 # Water drop loader CSS animation
