@@ -1,0 +1,26 @@
+{
+  "language": "en",
+  "ignoreWordsList": [],
+  "mistakeTypeToStatus": {
+    "Spelling": "Error",
+    "Passive voice": "Hint",
+    "Complex Expression": "Hint",
+    "Hidden Verbs": "Information",
+    "Hyphen Required": "Hint",
+    "Redundant Expression": "Hint",
+    "Did you mean...": "Hint",
+    "Repeated Word": "Warning",
+    "Missing apostrophe": "Warning",
+    "Cliches": "Hint",
+    "Missing Word": "Warning",
+    "Make I uppercase": "Warning"
+  },
+  "languageIDs": [
+    "markdown",
+    "plaintext"
+  ],
+  "ignoreRegExp": [
+    "/\\(.*\\.(jpg|jpeg|png|md|gif|JPG|JPEG|PNG|MD|GIF)\\)/g",
+    "/((http|https|ftp|git)\\S*)/g"
+  ]
+}

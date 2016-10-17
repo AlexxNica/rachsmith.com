@@ -1,10 +1,12 @@
-<article class="home-post link">
-    <header class="home-article-header">
-        <p class="published">{{formattedDate}}</p>
-        <h2><a class="home-post-title" href="{{link}}">
-            <svg width="30" height="30" class="icon">
-            <use xlink:href="#icon-link" />
-            </svg> {{title}}</a>
-            </h2>
-    </header>
-</article>
+<li class="home-post link">
+  <section class="meta">
+    <span class="published">{{formattedDate}}</span>
+    <span class="post-type">
+      <svg width="30" height="30" class="icon">
+        <use xlink:href="#icon-link" />
+      </svg>
+      Link
+    </span>
+  </section>
+  <h2><a class="home-post-title" href="{{link}}">{{title}}</a></h2>
+</li>

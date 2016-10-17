@@ -1,31 +1,55 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>Rachel Smith :: {{title}}</title>
-    <meta name="description" content="{{description}}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
-    <link href='../css/style.css' rel='stylesheet' type='text/css'>
+  <meta charset="UTF-8">
+  <title>Rachel Smith :: {{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+  <link href='../css/style.css' rel='stylesheet' type='text/css'>
 
 </head>
+
 <body style="background-color: {{backgroundColor}}">
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" width="100" height="100">
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" width="100" height="100">
     <symbol id="icon-rss" viewBox="0 0 1000 834">
     <path d="M103.75 708.5q43.75 0 74.375 30.625t30.625 73.125 -30.625 73.125 -74.375 30.625 -73.75 -30.625 -30 -73.125 30 -73.125 73.75 -30.625zm0 -625q197.5 0 365.625 97.5t266.25 265.625 98.125 365.625q0 42.5 -30.625 73.125t-74.375 30.625 -73.75 -30.625 -30 -73.125q0 -215 -152.5 -368.125t-368.75 -153.125q-43.75 0 -73.75 -30.625t-30 -73.125 30 -73.125 73.75 -30.625zm0 312.5q172.5 0 295 121.875t122.5 294.375q0 42.5 -30.625 73.125t-74.375 30.625 -73.75 -30.625 -30 -73.125q0 -86.25 -61.25 -147.5t-147.5 -61.25q-43.75 0 -73.75 -30.625t-30 -73.125 30 -73.125 73.75 -30.625z"/>
     </symbol>
     </svg>
-    <header class="container post-header"><h3>A thought from <a href="../index.html">Rachel Smith</a></h2></header>
-    <main class="content typeset container">
-        <p class="published">{{formattedDate}}</p>
-        {{content}}
-    </main>
-    <div class="container">
-        {{prev-link}}
-        {{next-link}}
-    </div>
-    {{footer}}
-
-    {{scripts}}
+  <header class="post-header">
+    <h3>A thought from <a href="../index.html">Rachel Smith</a></h2>
+  </header>
+  <main class="content typeset container">
+    <p class="published">{{formattedDate}}</p>
+    {{content}}
+  </main>
+  <div class="container comments">
+    <div id="disqus_thread"></div>
+    <script>
+      /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+      /*
+      var disqus_config = function () {
+      this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+      */
+      (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+          s = d.createElement('script');
+        s.src = '//rach-smith.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  <div class="container">
+    {{prev-link}} {{next-link}}
+  </div>
+  {{footer}} {{scripts}}
 </body>
+
 </html>
